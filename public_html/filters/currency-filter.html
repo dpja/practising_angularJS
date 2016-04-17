@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+  <style>
+      h1{
+        font-family: cursive;
+          color:maroon;   
+      }
+      h2{
+        font-family: monospace;
+          color:blueviolet;   
+      }
+      div{
+          font-family: cursive;
+          color:red;
+      }
+  </style>
+</head>
+
+<body ng-app="myApp">
+    <div ng-controller="myController">
+      
+        Custom currency identifier: {{myData.currency | currency:'Rs.'}} <br />
+   Tex to be converted in uppercase :  {{myData.myText|uppercase}}
+       
+    </div>
+    <script>
+        var myApp = angular.module('myApp', []);
+        
+        myApp.controller("myController", function ($scope) {
+            
+            $scope.myData = { };
+            $scope.myData.currency  = 23000;
+            $scope.myData.myText  = "hello world ,its angularjs";
+            
+        });
+    </script>
+</body>
+</html>

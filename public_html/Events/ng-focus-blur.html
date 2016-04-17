@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+        <style>
+            h1{
+                color:maroon;
+                font-family: cursive; 
+            }
+            h2{
+                color:red;
+                font-family: cursive;
+            } 
+            span{
+                color:blueviolet;
+                font-family: monospace;
+            }
+            li,div{
+              color:blueviolet;
+                font-family: monospace;
+                font-size:24px;
+            }
+
+            </style>
+        </head>
+        <body ng-app="myapp">
+            <h1>Using ng-focus</h1>
+            <div ng-controller="MyController">
+                
+     <input type='text' ng-focus="myData.MyFunction1()" ng-blur="myData.MyFunction2()" ng-init="count=0" placeholder='Enter Name'>
+  
+
+
+                </div>
+           
+                <script>
+                            angular.module("myapp", [])
+                                    .controller("MyController", function ($scope) {
+                                        $scope.myData = {};
+                                       
+                            $scope.myData.MyFunction1 = function(){
+    alert("input in focus");
+    
+                            }
+                            $scope.myData.MyFunction2 = function(){
+    alert("input NOT in focus");
+    
+                            }
+
+
+                                    })
+                </script>
+        </body>
+    </html>

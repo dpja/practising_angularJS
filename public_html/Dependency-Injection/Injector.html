@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+ 
+  <style>
+      h1{
+        font-family: cursive;
+          color:maroon;   
+      }
+      h2{
+        font-family: monospace;
+          color:blueviolet;   
+      }
+      div{
+          font-family: cursive;
+          color:red;
+      }
+  </style>
+</head>
+
+<body >
+    <h1>Injector and its Working ----</h1>
+    <h2>The injector is able to seek out what <b><i>game</i></b> is being injected as, here a factory.
+In invoke(), the key <b><i>game</i></b>, and Angular searches for services with that name.
+Ultimately, the cache stores all providers, so invoke checks there. 
+The injector grabs the provider and throws it into that function. </h2>
+   <div ng-app="app" ng-controller="AppCtrl">
+  {{ title }}
+</div>
+    <script>
+   
+var app = angular.module("app",[]);
+
+app.factory("game", function () {
+  return {
+    title: "StarCraft"
+  };
+});
+
+angular.injector(["app"]).invoke(function (game) {
+  alert(game.title);
+});
+
+app.controller("AppCtrl", function ($scope, game) {
+  $scope.title = game.title;
+});
+        
+        
+    </script>
+</body>
+</html>
+   

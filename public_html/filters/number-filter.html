@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+  <style>
+      h1{
+        font-family: cursive;
+          color:maroon;   
+      }
+      h2{
+        font-family: monospace;
+          color:blueviolet;   
+      }
+      div{
+          font-family: cursive;
+          color:red;
+      }
+  </style>
+</head>
+
+<body ng-app="myapp">
+<h1>number-filter</h1>
+<h2>This program formats the myData.theNumber variable as a number with 2 decimal places.</h2>
+  <div ng-controller="MyController" >
+    <span>{{myData.theNumber | number: 2}}</span>
+  </div>
+
+  <script>
+    angular.module("myapp", [])
+    .controller("MyController", function($scope) {
+     $scope.myData = {};
+     $scope.myData.theNumber = 2.5374;
+    });
+  </script>
+
+</body>
+</html>

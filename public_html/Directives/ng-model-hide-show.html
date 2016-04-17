@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+        <style>
+            h1{
+                color:maroon;
+                font-family: cursive; 
+            }
+            h2{
+                color:red;
+                font-family: cursive;
+            } 
+            span{
+                color:blueviolet;
+                font-family: monospace;
+
+            </style>
+        </head>
+        <body ng-app="myapp">
+            <h1>Using ng-model, ng-hide and ng-show</h1>
+            <div ng-controller="MyController">
+                Click me: <input type="checkbox" ng-model="checked" aria-label="Toggle ngShow"><br/>
+                <div>
+                    Show:
+                    <div class="check-element animate-hide" ng-show="checked">
+                        <i class="fa fa-thumbs-up" aria-hidden="true"></i> I show up when your checkbox is checked.
+                    </div>
+                </div>
+                <div>
+                    Hide:
+                    <div class="check-element animate-hide" ng-hide="checked">
+                        <i class="fa fa-thumbs-down" aria-hidden="true"></i>I hide when your checkbox is checked.
+                    </div>
+                </div>
+                </div>
+                <script>
+                            angular.module("myapp", [])
+                                    .controller("MyController", function ($scope) {
+                                        $scope.myData = {};
+
+
+
+                                    })
+                </script>
+        </body>
+    </html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+  <style>
+      h1{
+        font-family: cursive;
+          color:maroon;   
+      }
+      div{
+          font-family: cursive;
+          color:blueviolet;
+      }
+  </style>
+</head>
+
+<body >
+    <h1>One Way Data Binding</h1>
+    <div ng-app ng-init="EmployeeName = 'Rachael'; EmployeeId = 123;">
+  <strong>EmployeeName:</strong> {{EmployeeName}}<br />
+  <strong>EmployeeId:</strong> <span ng-bind="EmployeeId"></span>
+    </div>
+</body>
+</html>

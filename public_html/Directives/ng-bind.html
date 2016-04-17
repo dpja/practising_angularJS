@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+         <style>
+             h2{
+                 color:red;
+                 font-family: cursive;
+             } 
+             span{
+                color:blueviolet;
+                 font-family: monospace;
+             
+         </style>
+    </head>
+    <body ng-app="myapp">
+        <h1>The ng-bind directive binds the model property declared via $scope or ng-model directive or the result of an expression to the HTML element. 
+            It also updates an element if the value of an expression changes.</h1>
+       <div ng-controller="MyController" >
+           <h2>Using Interpolation directive ------- <span> {{myData.textf()}}</span></h2>   
+      <h2>Using ng-bind directive ------- <span ng-bind="myData.textf()"></span></h2>
+  </div>
+
+  <script>
+    angular.module("myapp", [])
+    .controller("MyController", function($scope) {
+      $scope.myData = {};
+      $scope.myData.textf = function() { return "A text from a function"; };
+    });
+  </script>
+    </body>
+</html>

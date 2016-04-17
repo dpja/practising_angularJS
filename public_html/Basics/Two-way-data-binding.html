@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+  <style>
+      h1{
+        font-family: cursive;
+          color:maroon;   
+      }
+      div{
+          font-family: cursive;
+          color:blueviolet;
+      }
+  </style>
+</head>
+
+<body >
+    <h1>Two Way Data Binding----with ng-model</h1>
+    <div ng-app ng-init="EmployeeName = 'Rachael'; EmployeeId = 123;">
+  <strong>Employee Name:</strong> {{EmployeeName}}<br />
+  <strong>Employee Id:</strong> <span ng-bind="EmployeeId"></span>
+  <br />
+  <label>Set the Employee Name: <input type="text" ng-model="EmployeeName"/></label><br />
+  <label>Set the Employee Id: <input type="text" ng-model="EmployeeId"/></label>
+    </div>
+</body>
+</html>

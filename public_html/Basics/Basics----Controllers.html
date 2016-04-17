@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+  <style>
+      h1{
+        font-family: cursive;
+          color:maroon;   
+      }
+      div{
+          font-family: cursive;
+          color:blueviolet;
+      }
+  </style>
+</head>
+
+<body ng-app="myApp">
+    <h1>One Way Data Binding</h1>
+    <div ng-controller="GreetingController">
+  {{ greeting }}
+</div>
+    <script>
+var myApp = angular.module('myApp',[]);
+
+myApp.controller('GreetingController', ['$scope', function($scope) {
+  $scope.greeting = 'Hola!';
+}]);
+</script>
+</body>
+</html>

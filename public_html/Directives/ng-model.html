@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+         <style>
+             h2{
+                 color:red;
+                 font-family: cursive;
+             } 
+             span{
+                color:blueviolet;
+                 font-family: monospace;
+             
+         </style>
+    </head>
+    <body ng-app="myapp">
+        <h1>ngModel directive binds an input,select, textarea (or custom form control) to a property on the scope using NgModelController, which is created and exposed by this directive.</h1>
+       <div ng-controller="MyController" >
+           <h2>Using Interpolation directive ------- <span> {{myData.textf()}}</span></h2>   
+      <h2>Using ng-bind directive ------- <span ng-bind="myData.textf()"></span></h2>
+  </div>
+
+  <script>
+    angular.module("myapp", [])
+    .controller("MyController", function($scope) {
+      $scope.myData = {};
+      $scope.myData.textf = function() { return "A text from a function"; };
+    });
+  </script>
+    </body>
+</html>
